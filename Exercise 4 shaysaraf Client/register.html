@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Register</title>
+    <link href="Css/registerCss.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/register.js"defer></script>
+</head>
+<body>
+
+    <h1>Register</h1>
+
+    <form id="registerForm">
+        <table>
+            <tr><td>Name:</td><td><input type="text" id="nameTB" required /></td></tr>
+            <tr><td>Email:</td><td><input type="email" id="emailTB" required /></td></tr>
+            <tr><td>Password:</td><td><input type="password" id="passwordTB" required /></td></tr>
+            <tr><td colspan="2"><button type="submit">Register</button></td></tr>
+        </table>
+        <p id="errorMsg" style="color:red;"></p>
+        <p>Already have an account? <a href="login.html">Log in here</a></p>
+
+    </form>
+
+</body>
+</html>

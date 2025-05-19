@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Page</title>
+    <link href="Css/IndexCss.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="top-buttons">
+        <!--<p id="greeting"></p>-->
+        <button onclick="window.location.href='MyMovies.html'">My Movies</button>
+        <button id="loadMoviesBtn">Load Movies</button>
+        <button onclick="window.location.href='AddMovie.html'">AddMovie</button>
+        <button onclick="window.location.href='admin.html'">Admin</button>
+        <button id="goToLoginBtn">🔐 Login</button>
+        <button id="editProfileBtn">Edit My Profile</button>
+        <button id="logoutBtn">Logout</button>
+    </div>
+
+    <!-- אזור סינון -->
+    <div class="filters">
+        <input type="text" id="titleFilter" placeholder="Search by title" />
+        <button id="filterByTitleBtn">Filter by Title</button>
+
+        <input type="date" id="startDate" />
+        <input type="date" id="endDate" />
+        <button id="filterByDateBtn">Filter by Release Date</button>
+    </div>
+
+    <!-- אזור הסרטים -->
+    <div id="moviesContainer"></div>
+    <script src="scripts/IndexMovies.js"></script>
+</body>
+</html>

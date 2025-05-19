@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Movies</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="scripts/movies-db.js"></script>
+</head>
+<body>
+
+    <h2>Bulk Upload Movies</h2>
+    <button id="uploadBtn">Upload All Movies</button>
+
+    <script>
+        $(document).ready(function () {
+            $("#uploadBtn").click(function () {
+
+                // בונה מערך חדש moviesToSend בלי id ועם תיקונים
+                const moviesToSend = movies.map(movie => ({
+                    url: movie.url,
+                    primaryTitle: movie.primaryTitle,
+                    description: movie.description,
+                    primaryImage: movie.primaryImage,
+                    year: movie.startYear || new Date(movie.releaseDate).getFullYear(),
+                    releaseDate: new Date(movie.releaseDate).toISOString(),
+                    language: movie.language || "Unknown",
+                    budget: Math.max(100000, Number(movie.budget) || 100000),
+                    grossWorldwide: Number(movie.grossWorldwide) || 0,
+                    genres: Array.isArray(movie.genres) ? movie.genres.join(", ") : movie.genres,
+                    isAdult: movie.isAdult === true || movie.isAdult === "true" || movie.isAdult === 1,
+                    runtimeMinutes: Number(movie.runtimeMinutes) || 0,
+                    averageRating: Number(movie.averageRating) || 0,
+                    numVotes: Number(movie.numVotes) || 0
+                }));
+
+                console.log(moviesToSend); // אפשר למחוק אחרי בדיקה
+
+                // שליחת ה-moviesToSend לשרת
+                $.ajax({
+                    url: "https://localhost:7275/api/Movies/BulkInsert", // כתובת ה-API שלך
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(moviesToSend),
+                    success: function () {
+                        alert("All movies uploaded successfully!");
+                    },
+                    error: function (xhr) {
+                        alert("Error uploading movies: " + xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

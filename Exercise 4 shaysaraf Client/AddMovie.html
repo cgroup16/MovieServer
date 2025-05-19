@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Css/AddMovieCss.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="backHomeBtn">Back to Home</button>
+
+    <form id="AddmovieForm">
+        <table>
+            <tr><td>URL:</td><td><input type="text" id="urlTB" /></td></tr>
+            <tr><td>Primary Title:</td><td><input type="text" id="titleTB" required /></td></tr>
+            <tr><td>Description:</td><td><textarea id="descriptionTB"></textarea></td></tr>
+            <tr><td>Primary Image:</td><td><input type="text" id="imageTB" required /></td></tr>
+            <tr><td>Year:</td><td><input type="number" id="yearTB" required /></td></tr>
+            <tr><td>Release Date:</td><td><input type="date" id="releaseDateTB" required /></td></tr>
+
+            <!-- Language with datalist -->
+            <tr>
+                <td>Language:</td>
+                <td>
+                    <input list="languagesList" id="languageTB" required />
+                    <datalist id="languagesList">
+                        <option value="English" />
+                        <option value="French" />
+                        <option value="Spanish" />
+                        <option value="Hebrew" />
+                        <option value="Japanese" />
+                        <option value="Korean" />
+                    </datalist>
+                </td>
+            </tr>
+
+            <tr><td>Budget:</td><td><input type="number" id="budgetTB" min="100000" /></td></tr>
+            <tr><td>Gross Worldwide:</td><td><input type="number" id="grossTB" value="0" /></td></tr>
+
+            <!-- Genres with datalist -->
+            <tr>
+                <td>Genres:</td>
+                <td>
+                    <input list="genresList" id="genresTB" />
+                    <datalist id="genresList">
+                        <option value="Action" />
+                        <option value="Comedy" />
+                        <option value="Drama" />
+                        <option value="Thriller" />
+                        <option value="Romance" />
+                        <option value="Sci-Fi" />
+                    </datalist>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Is Adult:</td>
+                <td><input type="checkbox" id="isAdultCB" /></td>
+            </tr>
+
+            <tr><td>Runtime (minutes):</td><td><input type="number" id="runtimeTB" required /></td></tr>
+            <tr><td>Average Rating:</td><td><input type="number" step="0.1" id="ratingTB" value="0" /></td></tr>
+            <tr><td>Number of Votes:</td><td><input type="number" id="votesTB" value="0" /></td></tr>
+
+            <tr><td colspan="2"><button type="submit">Add Movie</button></td></tr>
+        </table>
+    </form>
+    <script src="scripts/AddMovieJs.js"></script>
+</body>
+</html>

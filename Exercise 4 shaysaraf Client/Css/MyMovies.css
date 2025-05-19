@@ -1,0 +1,131 @@
+﻿/* בסיס */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+/* כותרת */
+h1 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* כפתור חזרה */
+#backHomeBtn {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 16px;
+    font-size: 14px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+    #backHomeBtn:hover {
+        background-color: #0056b3;
+    }
+
+/* סינון */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+    .filters input[type="text"],
+    .filters input[type="date"] {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .filters button {
+        padding: 8px 14px;
+        font-size: 14px;
+        background-color: #17a2b8;
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        .filters button:hover {
+            background-color: #117a8b;
+        }
+
+/* תצוגת הסרטים ב־Grid */
+#moviesContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* בדיוק 4 בעמודה */
+    gap: 20px;
+    padding: 10px;
+    justify-content: start;
+}
+
+
+
+/* כרטיס */
+.movie-card {
+    width: 220px; /* גודל קבוע */
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease;
+    text-align: center;
+}
+
+
+    .movie-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .movie-card img {
+        width: 100%; /* תתפוס את כל רוחב הכרטיס */
+        height: 300px; /* גובה קבוע */
+        object-fit: cover; /* כדי שהתמונה לא תימתח */
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+
+
+    /* טקסטים בכרטיס */
+    .movie-card h3 {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+    }
+
+    .movie-card p {
+        font-size: 14px;
+        color: #555;
+        margin: 4px 0;
+    }
+
+/* כפתור מחיקה */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .delete-btn:hover {
+        background-color: #a71d2a;
+    }
